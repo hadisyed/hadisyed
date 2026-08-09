@@ -455,3 +455,25 @@ footer {
     padding: 34px 28px;
   }
 }
+
+
+/* Hero profile photo */
+.hero-photo-card {
+  padding: 0;
+  background: var(--surface);
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+@media (max-width: 900px) {
+  .hero-photo {
+    min-height: 330px;
+  }
+}
