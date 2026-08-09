@@ -13,6 +13,13 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* Remove translucent decorative circle at the top */
+    .hero::before,
+    .hero::after {
+      display: none !important;
+      content: none !important;
+    }
+
     /* Clean, self-contained contact form styling */
     .contact-section {
       max-width: 760px;
