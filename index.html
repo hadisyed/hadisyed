@@ -150,7 +150,16 @@
           </p>
         </div>
 
-        <a class="button primary" href="#home">Back to top ↑</a>
+        <form class="contact-form" action="https://formsubmit.co/hadi@profetix.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from hadisyed.com">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-row">
+            <label>Name<input type="text" name="name" placeholder="Your name" required></label>
+            <label>Email<input type="email" name="email" placeholder="you@example.com" required></label>
+          </div>
+          <label>Message<textarea name="message" rows="5" placeholder="Write your message..." required></textarea></label>
+          <button class="button primary" type="submit">Send message</button>
+        </form>
       </div>
     </section>
   </main>

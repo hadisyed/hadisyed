@@ -477,3 +477,17 @@ footer {
     min-height: 330px;
   }
 }
+
+/* Simple contact form */
+.contact-form {
+  width: min(100%, 520px);
+  display: grid;
+  gap: 16px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form label { display: grid; gap: 7px; font-size: .86rem; font-weight: 600; color: var(--text); }
+.contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--border); border-radius: 12px; background: var(--bg); padding: 13px 14px; font: inherit; color: var(--text); outline: none; }
+.contact-form textarea { resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(36,90,71,.08); }
+.contact-form .button { border: 0; cursor: pointer; justify-self: start; }
+@media (max-width: 700px) { .form-row { grid-template-columns: 1fr; } .contact-form { width: 100%; } }
