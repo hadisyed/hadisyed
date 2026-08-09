@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal website highlighting creativity, mental health experience, and Profetix." />
+  <title>Hadi | Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="#home">Hadi.</a>
+
+      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Toronto, Canada</p>
+          <h1>Creative thinking.<br><span>Human perspective.</span></h1>
+          <p class="hero-text">
+            I’m Hadi — a creative person, technology enthusiast, and entrepreneur
+            focused on building Profetix while continuing to learn, create, and grow.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#about">Get to know me</a>
+            <a class="button secondary" href="#focus">Explore my focus</a>
+          </div>
+        </div>
+
+        <div class="hero-card hero-photo-card">
+          <img class="hero-photo" src="ProfilePhoto.webp" alt="Portrait of Hadi">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container two-column">
+        <div>
+          <p class="section-label">About me</p>
+          <h2>I like creating, learning, and building meaningful things.</h2>
+        </div>
+
+        <div class="body-copy">
+          <p>
+            I enjoy drawing and exploring creative disciplines. I’m also interested in
+            learning acting — not only as a performance skill, but as another way to
+            understand expression, communication, and storytelling.
+          </p>
+          <p>
+            My experiences have also given me a strong personal understanding of mental
+            health. That perspective has shaped the way I think about people, technology,
+            creativity, and the kind of work I want to build.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="focus">
+      <div class="container">
+        <p class="section-label">Current focus</p>
+        <div class="feature-card">
+          <div>
+            <span class="feature-number">01</span>
+            <h2>Profetix</h2>
+          </div>
+          <div>
+            <p>
+              My main professional focus is <strong>Profetix</strong>, my technology
+              business. I’m interested in using technology, digital services, and emerging
+              tools to solve real problems and create useful experiences for people and
+              businesses.
+            </p>
+            <p class="small-note">
+              The goal is simple: keep learning, keep building, and develop Profetix into
+              something valuable and distinctive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="interests">
+      <div class="container">
+        <p class="section-label">Life outside work</p>
+        <h2 class="section-heading">What keeps me creative and grounded.</h2>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card-icon">✦</span>
+            <h3>Drawing & Creativity</h3>
+            <p>
+              I enjoy drawing, experimenting with ideas, and finding new creative outlets.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-icon">◐</span>
+            <h3>Learning Acting</h3>
+            <p>
+              Acting interests me as a way to explore expression, storytelling, and confidence.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-icon">♫</span>
+            <h3>Music</h3>
+            <p>
+              Music is one of my favorite ways to slow down, reset, and enjoy time away from work.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-icon">▣</span>
+            <h3>Movies & Series</h3>
+            <p>
+              I like unwinding with a good movie or television series and getting absorbed in a story.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box">
+        <div>
+          <p class="section-label">Location</p>
+          <h2>Based in Toronto, Canada.</h2>
+          <p>
+            Building, learning, and creating from one of Canada’s most diverse cities.
+          </p>
+        </div>
+
+        <a class="button primary" href="#home">Back to top ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Hadi. All rights reserved.</p>
+      <p>Personal site · Toronto, Canada</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
