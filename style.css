@@ -27,7 +27,14 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
+  overflow-x: hidden;
 }
+
+::selection { background: #bed7ca; color: var(--accent-dark); }
+
+:focus-visible { outline: 3px solid #d6a85f; outline-offset: 4px; }
+
+section { scroll-margin-top: 76px; }
 
 a {
   color: inherit;
@@ -63,6 +70,7 @@ a {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   font-weight: 700;
+  color: var(--accent-dark);
 }
 
 .nav-links {
@@ -82,6 +90,19 @@ a {
   color: var(--accent);
 }
 
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -7px;
+  height: 2px;
+  background: var(--accent);
+  transition: right .2s ease;
+}
+.nav-links a:hover::after { right: 0; }
+
 .menu-toggle {
   display: none;
   border: 0;
@@ -99,6 +120,20 @@ a {
 
 .hero {
   padding: 92px 0 110px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: -300px;
+  top: 20px;
+  border-radius: 50%;
+  background: rgba(190, 215, 202, .35);
+  filter: blur(2px);
+  pointer-events: none;
 }
 
 .hero-grid {
@@ -176,6 +211,8 @@ h1 span {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.45);
 }
+
+.button.secondary:hover { background: var(--surface); border-color: rgba(36,90,71,.3); }
 
 .hero-card {
   position: relative;
@@ -315,6 +352,13 @@ h1 span {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(36,90,71,.25);
+  box-shadow: 0 18px 45px rgba(23,33,29,.08);
 }
 
 .card-icon {
@@ -480,14 +524,21 @@ footer {
 
 /* Simple contact form */
 .contact-section {
-  max-width: 650px;
-  margin: 80px auto;
-  padding: 0 24px;
+  width: min(760px, calc(100% - 40px));
+  margin: 96px auto;
+  padding: 56px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .contact-section h2 {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
 }
+
+.contact-intro { margin-bottom: 30px; color: var(--muted); }
 
 .contact-form {
   display: flex;
@@ -511,10 +562,11 @@ footer {
   width: 100%;
   box-sizing: border-box;
   padding: 14px 16px;
-  border: 1px solid #c7c7c7;
+  border: 1px solid var(--border);
   border-radius: 10px;
   font: inherit;
-  background: white;
+  background: #fbfaf7;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
 .form-group textarea {
@@ -526,6 +578,8 @@ footer {
 .form-group textarea:focus {
   outline: none;
   border-color: #28664f;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(40,102,79,.1);
 }
 
 .contact-form button {
@@ -541,5 +595,52 @@ footer {
 }
 
 .contact-form button:hover {
-  opacity: 0.9;
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.contact-form button { transition: background .2s ease, transform .2s ease; }
+
+.hero-visual {
+  isolation: isolate;
+  background: linear-gradient(145deg, #dbe8df 0%, #f2ead8 100%);
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  z-index: -1;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 20px;
+}
+
+.visual-monogram {
+  display: grid;
+  place-items: center;
+  width: 158px;
+  height: 158px;
+  margin-bottom: auto;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+  box-shadow: 0 18px 45px rgba(23,33,29,.12);
+  backdrop-filter: blur(12px);
+  font: 700 5rem/1 "Playfair Display", serif;
+  color: var(--accent-dark);
+}
+
+.hero-visual p { font-family: "Playfair Display", serif; font-size: 1.35rem; }
+.visual-orbit { position: absolute; z-index: -2; border: 1px solid rgba(36,90,71,.18); border-radius: 50%; }
+.orbit-one { width: 330px; height: 330px; top: -65px; right: -105px; }
+.orbit-two { width: 230px; height: 230px; right: -45px; bottom: -70px; }
+
+@media (max-width: 700px) {
+  .contact-section { margin: 64px auto; padding: 34px 24px; }
+  .nav-links a::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
 }

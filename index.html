@@ -8,20 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style(7).css" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
       <a class="logo" href="#home">Hadi.</a>
 
-      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <div class="nav-links">
+      <div class="nav-links" id="primary-navigation">
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
         <a href="#interests">Interests</a>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="hero-card hero-photo-card">
-          <img class="hero-photo" src="ProfilePhoto.webp" alt="Portrait of Hadi">
+          <img class="hero-photo" src="ProfilePhoto(4).webp" alt="Portrait of Hadi" width="1376" height="1824" fetchpriority="high">
         </div>
       </div>
     </section>
@@ -140,14 +140,18 @@
       </div>
     </section>
 
-    <section class="contact-section">
-  <h2>Contact Me</h2>
+    <section class="contact-section" id="contact">
+  <p class="section-label">Let’s connect</p>
+  <h2>Have something interesting in mind?</h2>
+  <p class="contact-intro">Send me a note and I’ll get back to you as soon as I can.</p>
 
   <form
     class="contact-form"
     action="https://formsubmit.co/hadi@profetix.com"
     method="POST"
   >
+    <input type="hidden" name="_subject" value="New message from Hadi's website">
+    <input type="hidden" name="_captcha" value="false">
     <div class="form-group">
       <label for="name">Name</label>
       <input
@@ -181,7 +185,7 @@
       ></textarea>
     </div>
 
-    <button type="submit">Send message</button>
+    <button type="submit">Send message <span aria-hidden="true">→</span></button>
   </form>
 </section>
   </main>
